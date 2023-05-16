@@ -1,0 +1,25 @@
+version: "3"
+networks:
+  services:
+    driver: bridge
+
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME:-postgres}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    networks:
+      - services
+    ports:
+      - "5432:5432"
+
+  initdb:
+    build:
+      context: ../..
+      dockerfile: .deploy/local/initDB/Dockerfile
+    networks:
+      - services
+    depends_on:
+      - db
