@@ -3,6 +3,6 @@ project(Backend)
 
 set(CMAKE_CXX_STANDARD 20)
 find_package(Crow)
-add_executable(Backend main.cpp DataBaseUtil/DB.cpp DataBaseUtil/DB.h Models/BaseModel.h Models/BaseModel.cpp Models/Employee/Employee.cpp Models/Employee/Employee.h Models/Employee/Status.cpp Models/Employee/Status.h Models/Employee/Divsion.cpp Models/Employee/Divsion.h)
+add_executable(Backend main.cpp DataBaseUtil/DB.cpp DataBaseUtil/DB.h Models/BaseModel.h Models/BaseModel.cpp Models/Employee/Employee.cpp Models/Employee/Employee.h Models/Employee/Status.cpp Models/Employee/Status.h Models/Employee/Divsion.cpp Models/Employee/Divsion.h Repositories/Repository.h Repositories/Division/DivisionRepository.cpp Repositories/Division/DivisionRepository.h)
 target_link_libraries(Backend -lpqxx -lpq Crow::Crow)
 

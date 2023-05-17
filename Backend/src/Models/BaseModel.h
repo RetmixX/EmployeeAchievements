@@ -17,7 +17,5 @@ public:
     BaseModel() = default;
     explicit BaseModel(int id);
     virtual std::shared_ptr<crow::json::wvalue> serializeJson() = 0;
-    /*virtual std::list<std::shared_ptr<BaseModel>> allObjects() = 0;
-    virtual std::shared_ptr<BaseModel> findById(int id) = 0;*/
 };
 #endif //BACKEND_BASEMODEL_H

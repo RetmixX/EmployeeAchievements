@@ -34,11 +34,11 @@ std::shared_ptr<Divsion> Divsion::serializeModel(const pqxx::result::const_itera
 }
 
 std::shared_ptr<crow::json::wvalue> Divsion::serializeJson() {
-
+    std::shared_ptr<crow::json::wvalue> test;
     crow::json::wvalue json;
     json["id"] = this->getTitle();
     json["title"] = this->title;
-    return ;
+    return test;
 }
 
 std::string Divsion::getTitle() {
